@@ -77,7 +77,6 @@ app.delete("/listings/:id",async(req,res)=>{
     console.log(deleteListing);
     res.redirect("/listings");
 });
-asjks
 
 // Setting Ports
 app.listen(8080,(req,res)=>{
