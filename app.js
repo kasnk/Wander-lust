@@ -38,7 +38,7 @@ app.get("/listings",async(req,res)=>{
 
 //New Route 
 app.get("/listings/new",(req,res)=>{
-    res.render("listings/new.ejs"); dsfdg
+    res.render("listings/new.ejs"); 
  });
 
  //Show Route
@@ -77,7 +77,7 @@ app.delete("/listings/:id",async(req,res)=>{
     console.log(deleteListing);
     res.redirect("/listings");
 });
-
+asjks
 
 // Setting Ports
 app.listen(8080,(req,res)=>{
