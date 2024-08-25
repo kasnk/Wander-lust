@@ -4,7 +4,7 @@
  
     <h3>Listing Details</h3>
 </div>
-    <div class="card col-6">
+    <div class="card col-6 show-card">
         <img src="<%=listing.image %>" class="card-img-top show-img" alt="hotel">
         <div class="card-body">
             <p class="card-text">
@@ -18,10 +18,10 @@
     </div>
  <br><br><br>
  <div class="btns">
-    <a href="/listings/<%=listing._id%>/edit" class="btn add-btn col-1 offset-2">Edit</a>
+    <a href="/listings/<%=listing._id%>/edit" class="btn add-btn col-1 offset-3">Edit</a>
     
     <form action="/listings/<%=listing._id%>?_method=DELETE" method="POST">
-        <button class="btn btn-dark offset-4">Delete</button>
+        <button class="btn btn-dark offset-5">Delete</button>
     </form>
   </div>
 </div>
