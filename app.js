@@ -8,14 +8,14 @@ const methodOverride=require("method-override");
 const ejsMate=require("ejs-mate");
 const wrapAsync=require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
-const {listingSchema}=require("./schema.js");
+const {listingSchema, reviewSchema}=require("./schema.js");
 const Review = require(path.join(__dirname, '/models/review.js'));
-
+ 
 
 // Database Connection
 let MONGO_URL="mongodb://127.0.0.1:27017/wanderlust"
 main().then(()=>{
-    console.log("connected");//sachin
+    console.log("connected");
 }).catch((err)=>{
     console.log(err);
 });
@@ -41,6 +41,7 @@ app.get("/listings",async(req,res,next)=>{
     
 });
 
+//Schema Validation
 const validateListing=(req,res,next)=>{
     let{error}=listingSchema.validate(req.body);    
     if(error){
@@ -50,6 +51,17 @@ const validateListing=(req,res,next)=>{
         next();
     }
 };
+
+const validateReview=(req,res,next)=>{
+    let{error}=reviewSchema.validate(req.body);    
+    if(error){
+        let errMsg=error.details.map((el)=>el.message).join(",");
+        throw new ExpressError(400, errMsg);
+    }else{
+        next();
+    }
+};
+
 
 //New Route 
 app.get("/listings/new",(req,res)=>{
@@ -97,7 +109,7 @@ app.delete("/listings/:id",wrapAsync(async(req,res)=>{
 
 // Reviews
 //Post Route
-app.post("/listings/:id/reviews",async(req,res)=>{
+app.post("/listings/:id/reviews", validateReview, wrapAsync(async(req,res)=>{
     let listing=await Listing.findById(req.params.id);
     let newReview=new Review(req.body.review);
 
@@ -107,10 +119,10 @@ app.post("/listings/:id/reviews",async(req,res)=>{
     await listing.save();
 
     console.log("new review saved");
-    res.send("new review saved");
+    //res.send("new review saved");
 
     res.redirect(`/listings/${listing._id}`);
-});
+}));
 // <<<<<<< HEAD
 
 // =======
@@ -126,6 +138,7 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render("error.ejs", {message});
 });
 
-app.listen(8080,(req,res)=>{
-    console.log("App is listening on port 8080");  
+const PORT=8080;
+app.listen(PORT,(req,res)=>{
+    console.log(`App is listening on port http://localhost:${PORT}/`);  
 });
