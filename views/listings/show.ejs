@@ -4,7 +4,7 @@
  
     <h3><%=listing.title%></h3>
 </div>
-    <div class="card col-6 show-card">
+    <div class="card col-6 show-card listing-card">
         <img src="<%=listing.image %>" class="card-img-top show-img" alt="hotel">
         <div class="card-body">
             <p class="card-text">
@@ -41,6 +41,23 @@
         </div>
         <button class="btn btn-outline-dark">Submit</button>
     </form>
+
+    <hr>
+
+    <p><b>All Reviews</b></p>
+    
+    <% for(review of listing.reviews){ %>
+        <div class="row"> 
+        <div class="card col-5 ms-3 mb-3">
+            <div class="card-body">
+                <div class="card-title">Jane Doe</div>
+                <p class="card-text"><%= review.comment %></p>
+                <p class="card-text"><%= review.rating %> stars</p>
+            </div>
+        </div>
+     <% } %>
+    </div>
+
   </div>
  
  
