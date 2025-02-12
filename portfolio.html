@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shekhar's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background-color: #232526;
+            border-bottom: 2px solid #4facfe;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(to bottom, #00c6ff, #0072ff);
+            color: white;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .header h1 {
+            margin-bottom: 20px;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .header p {
+            font-size: 1.2rem;
+        }
+        .profile-photo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #343a40;
+            transition: transform 0.5s ease;
+        }
+        .profile-photo img:hover {
+            transform: scale(1.1);
+        }
+        .section-title {
+            margin: 40px 0 20px;
+            text-align: center;
+            font-size: 2rem;
+            color: #0072ff;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeUp 1s;
+        }
+        @keyframes fadeUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #0072ff;
+            font-size: 24px;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #4facfe;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #232526;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shekhar's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#qualification">Qualification</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#social">Social Network</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Welcome to Shekhar's Portfolio</h1>
+            <p>Explore my projects, achievements, and more!</p>
+        </div>
+    </header>
+
+    <!-- Profile Photo Section -->
+    <section class="profile-photo">
+        <img src="219.jpg" alt="Shekhar's Profile Photo">
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <h2 class="section-title">Projects</h2>
+        <ul>
+            <li><strong>Expense Sharing App:</strong> A finance app to split expenses among friends.</li>
+            <li><strong>Ship Routing System:</strong> An optimal algorithm for maritime navigation.</li>
+            <li><strong>Hardware Inventory Management:</strong> A system for police department logistics.</li>
+        </ul>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="container">
+        <h2 class="section-title">Achievements</h2>
+        <ul>
+            <li>Winner of Hackathon 2024 for education tech innovations.</li>
+            <li>Developed a real-time financial analytics tool.</li>
+            <li>Certified in Advanced AI & Machine Learning by XYZ Institute.</li>
+        </ul>
+    </section>
+
+    <!-- Qualification Section -->
+    <section id="qualification" class="container">
+        <h2 class="section-title">Qualification</h2>
+        <ul>
+            <li><strong>Bachelor of Technology in Computer Science:</strong> ABC University, 2024.</li>
+            <li><strong>High School:</strong> XYZ School, 2020.</li>
+        </ul>
+    </section>
+
+    <!-- Social Network Section -->
+    <section id="social" class="container">
+        <h2 class="section-title">Social Network</h2>
+        <div class="social-icons text-center">
+            <a href="https://linkedin.com/in/shekhar" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/shekhar" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/shekhar" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Shekhar. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
